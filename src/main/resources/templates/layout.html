@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">SivaLabs Blog</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">-->
+    <link rel="stylesheet" th:href="@{/webjars/bulma/css/bulma.min.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+
+<body>
+<header>
+    <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" th:href="@{/}">
+                <span class="is-size-3 has-text-weight-bold">SivaLabs Blog</span>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+               data-target="navbarMain">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMain" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" th:href="@{/login}">
+                            Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main id="wrapper" class="container">
+    <div class="fixed-grid has-12-cols">
+        <div class="grid">
+            <div class="cell is-col-span-12">
+                <div layout:fragment="content">
+                    <!-- Your Page Content Here -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="has-text-centered">
+        <p>
+            <a href="https://sivalabs.in">SivaLabs</a>
+            <strong>&copy; <span th:text="${#dates.year(#dates.createNow())}">2024</span></strong>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

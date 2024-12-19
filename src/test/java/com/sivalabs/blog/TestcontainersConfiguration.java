@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 //import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration(proxyBeanMethods = false)
-class TestcontainersConfiguration {
+public class TestcontainersConfiguration {
 
     /*@Bean
     @ServiceConnection
